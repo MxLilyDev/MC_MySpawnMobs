@@ -1,0 +1,7 @@
+name: MySpawner
+version: '1.0.1'
+api-version: "1.16"
+description: Spawn un mob lors d'un click [Mob + Block custom in config]
+author: MxLily
+main: fr.mxlily.just2craft.spawnmobs.Main
+website: lilydieudonne.com
