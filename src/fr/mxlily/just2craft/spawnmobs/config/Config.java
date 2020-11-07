@@ -14,6 +14,7 @@ public class Config extends ConfigFile {
     // Configurations
     public static String TypeBlock;
     public static String Mobs;
+    public static String Particules;
 
 
 
@@ -21,5 +22,6 @@ public class Config extends ConfigFile {
     protected void loadConfigurations(List<Configuration> configurations, YamlConfiguration config) {
         TypeBlock = (String) new Configuration("EMERALD_BLOCK", "block", configurations, config).getValue();
         Mobs = (String) new Configuration("WOLF", "mobs", configurations, config).getValue();
+        Particules = (String) new Configuration("HEART", "part", configurations, config).getValue();
     }
 }

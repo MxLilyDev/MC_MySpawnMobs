@@ -25,16 +25,14 @@ public class Event implements Listener {
         Block block = event.getClickedBlock();
         Location location = player.getLocation();
         String mobName = Config.Mobs;
-        Material confblock = Material.valueOf(Config.TypeBlock);
         World w = player.getWorld();
         if (action.equals(Action.LEFT_CLICK_BLOCK)) {
-            if (block.getType().equals(confblock)) {
+            if (block.getType().equals(Material.valueOf(Config.TypeBlock))) {
                 w.spawnEntity(location, EntityType.valueOf(mobName));
-                location.getWorld().spawnParticle(Particle.FLAME, location, 16, 0.2F, 1F, 0.2F);
                 player.sendMessage(Lang.SpawnMobMessage.replace("%mob%", mobName.toLowerCase()));
+                location.getWorld().spawnParticle(Particle.valueOf(Config.Particules), location, 16, 0.2F, 1F, 0.2F);
 
             }
         }
     }
-
 }
