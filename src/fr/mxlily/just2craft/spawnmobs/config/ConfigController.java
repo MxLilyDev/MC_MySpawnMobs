@@ -4,7 +4,6 @@ import fr.mxlily.just2craft.spawnmobs.Main;
 
 public class ConfigController {
     public Main main;
-
     public Config config;
     public Lang lang;
 

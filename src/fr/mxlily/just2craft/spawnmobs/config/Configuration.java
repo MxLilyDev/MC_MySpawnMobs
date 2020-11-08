@@ -1,7 +1,7 @@
 package fr.mxlily.just2craft.spawnmobs.config;
 
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.craftbukkit.libs.jline.internal.Log;
+import fr.mxlily.just2craft.spawnmobs.Main;
 
 import java.util.List;
 
@@ -9,6 +9,7 @@ public class Configuration {
     private Object defaultValue;
     private Object value;
     private String key;
+    private Main main;
 
     private YamlConfiguration config;
 
@@ -16,6 +17,7 @@ public class Configuration {
         this.defaultValue = defaultValue;
         this.key = key;
         this.config = config;
+        this.main = main;
         this.setValue();
         configurations.add(this);
     }
@@ -29,7 +31,7 @@ public class Configuration {
 
         // Check the value in config is in good format
         else if(!value.getClass().equals(defaultValue.getClass())) {
-            Log.error("Attempted to give " + value.getClass() + " object for '" + key + "' value. Needed " + defaultValue.getClass() + " object.");
+            main.error("Attempted to give " + value.getClass() + " object for '" + key + "' value. Needed " + defaultValue.getClass() + " object.");
             value = defaultValue;
             config.set(key, defaultValue);
         }

@@ -4,7 +4,6 @@ import fr.mxlily.just2craft.spawnmobs.config.ConfigController;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-
 public final class Main extends JavaPlugin implements Listener {
     public void onEnable() {
         System.out.println("========== MYMOBS ==========");
@@ -14,8 +13,6 @@ public final class Main extends JavaPlugin implements Listener {
         log("Load Config files");
         getServer().getPluginManager().registerEvents( new Event(), this);
     }
-
-
 
     @Override
     public void onDisable() {
@@ -29,7 +26,7 @@ public final class Main extends JavaPlugin implements Listener {
      */
 
     public void log(String message) {
-        this.getLogger().info("[MYMOBS] " + message);
+        this.getLogger().info("[SpawnMobs] " + message);
     }
 
     public void error(String message) {
